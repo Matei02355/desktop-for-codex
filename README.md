@@ -7,7 +7,7 @@
   </p>
 
   <p>
-    <a href="https://github.com/Matei02355/desktop-for-codex/releases">Download .exe</a> •
+    <a href="https://github.com/Matei02355/desktop-for-codex/releases">Download </a> •
     <a href="#features">Features</a> •
     <a href="#development">Development</a>
   </p>
@@ -18,7 +18,6 @@
     <img src="https://img.shields.io/badge/status-Alpha-orange" alt="Status">
     <br>
     <img src="https://img.shields.io/badge/Made%20for-Codex-blue" alt="Made for Codex">
-    <img src="https://img.shields.io/badge/Engineered%20by-Codex-000000?logo=openai&logoColor=white" alt="Built by Matei6942">
   </div>
 </div>
 
