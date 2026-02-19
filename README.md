@@ -1,76 +1,91 @@
-# Codex Desktop (Windows)
+<div align="center">
+  <img src="./assets/logo.png" alt="Codex Desktop Logo" width="120">
+  <h1>Desktop for Codex</h1>
+  
+  <p>
+    <strong>A modern, native Windows GUI for the Codex CLI.</strong>
+  </p>
 
-Desktop UI wrapper for the `codex` CLI with:
+  <p>
+    <a href="https://github.com/Matei02355/desktop-for-codex/releases">Download .exe</a> •
+    <a href="#features">Features</a> •
+    <a href="#development">Development</a>
+  </p>
 
-- Model profiles (`Codex 5.1`, `Codex 5.2`, `Codex 5.3`)
-- Reasoning effort selector (`Low`, `Medium`, `High`) with invalid legacy values auto-mapped
-- Approval mode selector (`Ask Me`, `Yes Yes and Allow`, `No, Suggest Something Else`)
-- Image attachments per message
-- Clipboard image paste support
-- Local chat history/session list
-- Workspace folder picker with folder preview
-- Codex install/login health check with Refresh button
-- Custom startup splash animation
-- Session continuity using `codex exec` + `codex exec resume`
+  <div align="center">
+    <img src="https://img.shields.io/badge/platform-Windows-0078D6?logo=windows&logoColor=white" alt="Windows">
+    <img src="https://img.shields.io/badge/license-MIT-green" alt="MIT License">
+    <img src="https://img.shields.io/badge/status-Alpha-orange" alt="Status">
+    <br>
+    <img src="https://img.shields.io/badge/Made%20for-Codex-blue" alt="Made for Codex">
+    <img src="https://img.shields.io/badge/Engineered%20by-Codex-000000?logo=openai&logoColor=white" alt="Built by Codex">
+  </div>
+</div>
 
-## Requirements
+---
 
-- Windows
-- Node.js 20+
-- `codex` CLI installed and authenticated (`codex login`)
+> **🤖 Recursively Engineered:** This entire application—architecture, UI, and logic—was written by Codex itself. It is a tool built by an AI, for an AI.
 
-## Run
+## 📸 Preview
+
+![App Screenshot](./assets/screenshot.png)
+*(The interface features a glass-morphism design, workspace file context, and transparent terminal logging)*
+
+---
+
+## ✨ Features
+
+**Desktop for Codex** bridges the gap between the terminal and a modern workflow. It wraps the official CLI into a native executable, giving you a powerful UI for model selection and session management.
+
+* **🧠 Model & Reasoning:** Instantly switch between `Codex 5.3`, `5.2`, etc., and set reasoning effort (`Low`, `Medium`, `High`).
+* **🛡️ Approval Modes:**
+    * `Ask Me` (Safe)
+    * `Yes Yes and Allow` (Auto-execute commands for speed)
+* **📂 Workspace Aware:** Built-in folder picker with a live file preview sidebar. The app automatically manages thread IDs per folder.
+* **👁️ Visual Context:** Drag-and-drop image support and clipboard image pasting.
+* **💻 Transparent Terminal:** See exactly what commands the agent is running on your machine (via `cmd.exe`) in real-time.
+* **🔄 Session Continuity:** Uses `codex exec` + `resume` to keep your flow alive across restarts.
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+1.  **Node.js 20+** installed.
+2.  **Codex CLI** installed and authenticated globally:
+    ```bash
+    npm install -g codex-cli
+    codex login
+    ```
+
+### Installation
+Download the latest installer from the **[Releases](https://github.com/Matei02355/desktop-for-codex/releases)** page.
+
+1.  Run `CodexDesktop-Setup.exe`.
+2.  The app will auto-detect your `codex` command.
+3.  Start coding.
+
+---
+
+## 🛠️ Development
+
+If you want to modify the source code:
 
 ```bash
+# Clone the repo
+git clone [https://github.com/Matei02355/desktop-for-codex.git](https://github.com/Matei02355/desktop-for-codex.git)
+
+# Install dependencies
 npm install
+
+# Run in dev mode
 npm start
 ```
 
-If your global `npm` command is broken on Windows, use:
+## ☕ Support the Dev
 
-```powershell
-.\start-codex-desktop.cmd
-```
+If this tool saves you time (or you just think it's cool that an AI built it), consider buying me a coffee!
 
-## Build EXE
-
-```powershell
-.\build-exe.cmd
-```
-
-Output:
-
-- `dist\CodexDesktop-0.1.0-x64.exe`
-
-## Build MSI (x64 + x86)
-
-```powershell
-.\build-msi.cmd
-```
-
-Or run individual targets:
-
-```powershell
-npm run build:msi:x64
-npm run build:msi:ia32
-```
-
-Output:
-
-- `dist\Codex-Desktop-<version>-x64.msi`
-- `dist\Codex-Desktop-<version>-ia32.msi`
-
-Installer behavior:
-
-- Shows a license agreement that must be accepted
-- Guided install flow (`oneClick: false`) with install mode and destination selection
-
-Install location (default if unchanged):
-
-- `C:\Program Files\Codex-Desktop`
-
-## Notes
-
-- The app stores state in Electron `userData` (`state.json`), not in this repo.
-- Folder changes reset the underlying Codex thread id for that chat session.
-- The app uses the command from the `Codex Command` field (default: `codex`).
+<a href="https://buymeacoffee.com/matei6942" target="_blank">
+  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="60" width="217">
+</a>
