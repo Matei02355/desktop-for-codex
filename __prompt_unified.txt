@@ -1,0 +1,1 @@
+Run exactly one command `echo test` and then report the command output.

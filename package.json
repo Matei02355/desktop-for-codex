@@ -1,0 +1,51 @@
+{
+  "name": "codex-desktop-windows",
+  "version": "0.1.0",
+  "private": true,
+  "author": "Codex-Desktop",
+  "description": "Windows desktop UI for Codex CLI",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron .",
+    "build:win": "electron-builder --win portable",
+    "build:portable": "electron-builder --win portable",
+    "build:msi:x64": "electron-builder --win msi --x64",
+    "build:msi:ia32": "electron-builder --win msi --ia32",
+    "build:msi": "electron-builder --win msi --x64 && electron-builder --win msi --ia32"
+  },
+  "build": {
+    "appId": "com.codex.desktop.windows",
+    "productName": "Codex-Desktop",
+    "icon": "dist/.icon-ico/icon.ico",
+    "compression": "store",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/**/*",
+      "icon.png",
+      "package.json"
+    ],
+    "win": {
+      "icon": "dist/.icon-ico/icon.ico",
+      "target": [
+        "portable"
+      ],
+      "artifactName": "Codex-Desktop-${version}-${arch}.${ext}"
+    },
+    "msi": {
+      "oneClick": false,
+      "perMachine": true,
+      "additionalWixArgs": [
+        "-dWixUILicenseRtf=D:\\Codex-app\\build\\license.rtf"
+      ]
+    }
+  },
+  "devDependencies": {
+    "electron": "^32.2.0",
+    "electron-builder": "^24.13.3"
+  }
+}

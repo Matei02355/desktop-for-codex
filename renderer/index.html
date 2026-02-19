@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Codex Desktop</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="startupSplash" class="startup-splash" aria-hidden="true">
+      <div class="startup-card">
+        <div class="startup-logo">Codex</div>
+        <div class="startup-sub">Desktop 5 Series</div>
+        <div class="startup-bar">
+          <span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="window-chrome">
+          <span class="dot red"></span>
+          <span class="dot amber"></span>
+          <span class="dot green"></span>
+          <span class="chrome-icon">◱</span>
+        </div>
+
+        <div class="sidebar-nav">
+          <button id="newChatBtn" class="nav-item nav-item-primary">New thread</button>
+          <button type="button" class="nav-item nav-item-quiet">Automations</button>
+          <button type="button" class="nav-item nav-item-quiet">Skills</button>
+        </div>
+
+        <div class="sidebar-section-title">Threads</div>
+        <div id="sessionList" class="session-list"></div>
+
+        <div class="sidebar-footer">
+          <div class="brand">Codex Desktop</div>
+          <div class="brand-sub">Windows client for Codex CLI</div>
+          <div class="sidebar-account-card">
+            <div class="sidebar-account-label">Account</div>
+            <div id="accountIdentity" class="sidebar-account-identity">Not signed in</div>
+            <div id="tokenUsageSummary" class="sidebar-account-meta">Tokens: --</div>
+            <div id="tokenRemainingSummary" class="sidebar-account-meta">Usage left: --</div>
+          </div>
+        </div>
+      </aside>
+
+      <main class="workspace">
+        <header class="topbar">
+          <div class="topbar-title">
+            <h1 id="topThreadTitle">Create Codex app CTA</h1>
+            <div id="topRepoName" class="topbar-repo">No workspace selected</div>
+          </div>
+          <div class="topbar-actions">
+            <button id="openFolderBtn" class="button">Open</button>
+            <button id="clearFolderBtn" class="button button-subtle">Clear</button>
+          </div>
+        </header>
+
+        <div class="workspace-grid">
+          <section class="chat-panel">
+            <div class="control-strip">
+              <select id="modelSelect"></select>
+              <select id="reasoningSelect"></select>
+              <select id="approvalSelect"></select>
+              <input id="codexCommandInput" type="text" placeholder="codex" />
+              <button id="refreshStatusBtn" class="button button-subtle">Refresh</button>
+              <span id="codexHealthBadge" class="status-badge">Checking...</span>
+            </div>
+            <div id="codexStatusPanel" class="codex-status-panel"></div>
+
+            <div id="messages" class="messages"></div>
+
+            <div class="composer">
+              <div id="attachmentList" class="attachment-list"></div>
+              <textarea
+                id="promptInput"
+                rows="4"
+                placeholder="Ask Codex anything. Press Enter to send, Shift+Enter for newline. Paste images from clipboard."
+              ></textarea>
+              <div class="composer-actions">
+                <button id="attachImageBtn" class="button button-subtle">+</button>
+                <span id="statusText" class="status">Ready</span>
+                <button id="cancelBtn" class="button button-subtle" disabled>Stop</button>
+                <button id="sendBtn" class="button button-primary">Send</button>
+              </div>
+            </div>
+          </section>
+
+          <aside class="changes-panel">
+            <div class="changes-header">
+              <h2>Code Changes</h2>
+              <div id="changesCount" class="changes-hint">0 files changed</div>
+            </div>
+            <div id="workspacePath" class="workspace-path">No workspace selected</div>
+            <p id="changesMeta" class="hint">Select a workspace folder to view git changes.</p>
+            <div id="changesList" class="changes-list"></div>
+            <div id="changeCodeViewer" class="change-code-viewer"></div>
+          </aside>
+        </div>
+      </main>
+    </div>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>
